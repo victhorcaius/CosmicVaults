@@ -79,7 +79,7 @@ public class VaultsCommand implements CommandExecutor {
                 // last row center item to diamond
                 ItemStack newVault = new ItemStack(Material.DIAMOND);
                 ItemMeta newVaultMeta = newVault.getItemMeta();
-                newVaultMeta.setDisplayName("&b&lCreate New Vault".replace("&", "§"));
+                newVaultMeta.setDisplayName("&b&lTạo thêm kho".replace("&", "§"));
                 newVault.setItemMeta(newVaultMeta);
                 inv.setItem(40, newVault);
 
@@ -104,14 +104,14 @@ public class VaultsCommand implements CommandExecutor {
                 if (last_item < total_items) {
                     ItemStack item = new ItemStack(Material.GREEN_WOOL);
                     ItemMeta meta = item.getItemMeta();
-                    meta.setDisplayName("&aNext Page".replace("&", "§"));
+                    meta.setDisplayName("&aTrang tiếp theo".replace("&", "§"));
                     item.setItemMeta(meta);
                     inv.setItem(43, item);
                 }
                 if (first_item > 0) {
                     ItemStack item = new ItemStack(Material.RED_WOOL);
                     ItemMeta meta = item.getItemMeta();
-                    meta.setDisplayName("&cPrevious Page".replace("&", "§"));
+                    meta.setDisplayName("&cTrang trước đó".replace("&", "§"));
                     item.setItemMeta(meta);
                     inv.setItem(37, item);
                 }
