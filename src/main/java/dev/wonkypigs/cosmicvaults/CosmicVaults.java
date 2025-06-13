@@ -90,15 +90,6 @@ public final class CosmicVaults extends JavaPlugin {
         }
 
         config = YamlConfiguration.loadConfiguration(new File(getDataFolder(), "config.yml"));
-
-        if (config.getDouble("config-version") != confVersion) {
-            try {
-                new ConfigUpdater(this, "config.yml", "config-updater.yml").update();
-            } catch (IOException e) {
-                getLogger().severe("Could not update config.yml!");
-                e.printStackTrace();
-            }
-        }
         reloadConfig();
     }
 
