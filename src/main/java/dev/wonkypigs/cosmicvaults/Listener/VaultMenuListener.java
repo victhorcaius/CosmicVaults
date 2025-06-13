@@ -21,7 +21,7 @@ public class VaultMenuListener implements Listener {
         if (e.getView().getTitle().contains(plugin.getConfigValue("vault-menu-title").replace("&", "§"))) {
             e.setCancelled(true);
             String title = e.getView().getTitle();
-            int currpage = Integer.parseInt(title.substring(title.indexOf("Page ") + 5));
+            int currpage = Integer.parseInt(title.substring(title.indexOf("Trang ") + 5));
             if (e.getCurrentItem() != null) {
                 Player player = (Player) e.getWhoClicked();
 
@@ -42,10 +42,9 @@ public class VaultMenuListener implements Listener {
                 }
             }
         }
-        else if (e.getView().getTitle().contains("Vault ")) {
+        else if (e.getView().getTitle().contains("Kho ")) {
             String title = e.getView().getTitle();
-            int currvault = Integer.parseInt(title.substring(title.indexOf("Vault ") + 6));
-            plugin.getLogger().info(""+currvault);
+            int currvault = Integer.parseInt(title.substring(title.indexOf("Kho ") + 6));
             if (e.getCurrentItem() != null) {
                 Player player = (Player) e.getWhoClicked();
                 if (e.getCurrentItem().getType() == Material.BARRIER) {
@@ -69,9 +68,9 @@ public class VaultMenuListener implements Listener {
 
     @EventHandler
     public void onMenuClose(InventoryCloseEvent e) {
-        if (e.getView().getTitle().contains("Vault ")) {
+        if (e.getView().getTitle().contains("Kho ")) {
             Inventory inv = e.getInventory();
-            int id = Integer.parseInt(e.getView().getTitle().substring(e.getView().getTitle().indexOf("Vault ") + 6));
+            int id = Integer.parseInt(e.getView().getTitle().substring(e.getView().getTitle().indexOf("Kho ") + 6));
             VaultHandler.saveVault((Player) e.getPlayer(), inv, id);
         }
     }
