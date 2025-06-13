@@ -46,7 +46,7 @@ public class VaultsCommand implements CommandExecutor {
     }
 
     public static void vaultMenuFiller(int page, Player player) {
-        Inventory inv = plugin.getServer().createInventory(null, 45, plugin.getConfigValue("vault-menu-title").replace("&", "§") + "&r | Page ".replace("&", "§") + page);
+        Inventory inv = plugin.getServer().createInventory(null, 45, plugin.getConfigValue("vault-menu-title").replace("&", "§") + "&r | Trang ".replace("&", "§") + page);
         final int currpage = page - 1;
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try {
