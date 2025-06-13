@@ -46,7 +46,7 @@ public class VaultHandler implements Listener {
                 if (slots > 54) {
                     slots = 54;
                 }
-                Inventory inv = plugin.getServer().createInventory(null, slots, "&5&lVault ".replace("&", "§") + id);
+                Inventory inv = plugin.getServer().createInventory(null, slots, "&5&lKho ".replace("&", "§") + id);
 
                 // filling up
                 if (result.next()) {
@@ -63,14 +63,14 @@ public class VaultHandler implements Listener {
                 }
                 ItemStack back = new ItemStack(Material.BARRIER);
                 ItemMeta backMeta = back.getItemMeta();
-                backMeta.setDisplayName("&c&lBack to menu".replace("&", "§"));
+                backMeta.setDisplayName("&c&lQuay lại".replace("&", "§"));
                 back.setItemMeta(backMeta);
                 inv.setItem(slots-5, back);
 
                 if (id != total_items) {
                     ItemStack next = new ItemStack(Material.GREEN_WOOL);
                     ItemMeta nextMeta = next.getItemMeta();
-                    nextMeta.setDisplayName("&a&lNext Vault".replace("&", "§"));
+                    nextMeta.setDisplayName("&a&lKho tiếp theo".replace("&", "§"));
                     next.setItemMeta(nextMeta);
                     inv.setItem(slots-3, next);
                 }
@@ -78,7 +78,7 @@ public class VaultHandler implements Listener {
                 if (id != 1) {
                     ItemStack prev = new ItemStack(Material.RED_WOOL);
                     ItemMeta prevMeta = prev.getItemMeta();
-                    prevMeta.setDisplayName("&c&lPrevious Vault".replace("&", "§"));
+                    prevMeta.setDisplayName("&c&lKho trước đó".replace("&", "§"));
                     prev.setItemMeta(prevMeta);
                     inv.setItem(slots-7, prev);
                 }
@@ -168,7 +168,7 @@ public class VaultHandler implements Listener {
 
                 // update vaultsmenu
                 VaultsCommand.vaultMenuFiller(page, player);
-                player.sendMessage("§aNew vault created! (ID: " + (vaults + 1) + ")");
+                player.sendMessage("§aĐã tạo một kho mới! (ID: #" + (vaults + 1) + ")");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
