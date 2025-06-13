@@ -46,7 +46,7 @@ public class VaultHandler implements Listener {
                 if (slots > 54) {
                     slots = 54;
                 }
-                Inventory inv = plugin.getServer().createInventory(null, slots, "&5&lKho ".replace("&", "§") + id);
+                Inventory inv = plugin.getServer().createInventory(null, slots, "&5&lKho #".replace("&", "§") + id);
 
                 // filling up
                 if (result.next()) {
